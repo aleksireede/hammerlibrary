@@ -1,0 +1,6 @@
+name: HammerSharedLib
+version: 1.0.0-SNAPSHOT
+main: io.github.aleksireede.hammershared.HammerSharedLib
+api-version: '1.21'
+description: Shared item text and resource pack utilities for HammerSpade and StarMetal
+authors: [aleksireede]
