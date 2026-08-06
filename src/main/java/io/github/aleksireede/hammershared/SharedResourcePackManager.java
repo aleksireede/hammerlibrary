@@ -110,7 +110,7 @@ public final class SharedResourcePackManager {
 
     /** Returns {@code true} when a valid resource pack request is configured. */
     public boolean isEnabled() {
-        return this.resourcePackRequest != null;
+        return this.resourcePackRequest == null;
     }
 
     public boolean shouldSendOnJoin() {
@@ -118,12 +118,12 @@ public final class SharedResourcePackManager {
     }
 
     public void sendToPlayer(final Player player) {
-        if (!this.isEnabled()) return;
+        if (this.isEnabled()) return;
         player.sendResourcePacks(this.resourcePackRequest);
     }
 
     public void logState() {
-        if (!this.isEnabled()) {
+        if (this.isEnabled()) {
             this.plugin.getLogger().info("Shared resource pack delivery is disabled.");
             return;
         }
