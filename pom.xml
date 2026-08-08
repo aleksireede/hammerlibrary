@@ -6,7 +6,7 @@
 
     <groupId>io.github.aleksireede</groupId>
     <artifactId>hammer-shared-lib</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>hammer-shared-lib</name>
@@ -44,6 +44,26 @@
         </repository>
     </repositories>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.18.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-utils</artifactId>
+                <version>4.0.3</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.8.9</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>io.papermc.paper</groupId>
@@ -51,12 +71,13 @@
             <version>${paper.api.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!-- Override transitive commons-lang3 to fix CVE-2025-48924 (StackOverflowError in ClassUtils.getClass) -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.18.0</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/aleksireede/hammerlibrary</url>
+        </repository>
+    </distributionManagement>
 </project>
