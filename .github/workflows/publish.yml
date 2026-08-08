@@ -2,8 +2,8 @@ name: Publish Maven Package
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - "v*"
   workflow_dispatch:
 
 permissions:
