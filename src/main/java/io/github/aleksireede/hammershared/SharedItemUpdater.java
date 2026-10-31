@@ -48,7 +48,7 @@ public final class SharedItemUpdater {
     }
 
     /**
-     * Update the lore of {@code item} if it carries a recognised custom-item ID.
+     * Update the lore of {@code item} if it carries a recognized custom-item ID.
      * Damage is assumed to be zero (e.g. for tools that have no combat-damage config).
      */
     public static void updateChecker(final ItemStack item) {
@@ -56,7 +56,7 @@ public final class SharedItemUpdater {
     }
 
     /**
-     * Update the lore of {@code item} if it carries a recognised custom-item ID.
+     * Update the lore of {@code item} if it carries a recognized custom-item ID.
      *
      * @param damage pre-computed attack damage to display; values ≤ 1 are not shown
      */
@@ -193,7 +193,7 @@ public final class SharedItemUpdater {
     // Public rarity utilities (used by item creation code in dependent plugins)
     // -------------------------------------------------------------------------
 
-    /** Returns the MiniMessage colour tag that matches the given rarity name. */
+    /** Returns the MiniMessage color tag that matches the given rarity name. */
     public static String getColorFromRarity(final String rarity) {
         if (rarity == null) return "<white>";
         return switch (rarity.toLowerCase()) {
